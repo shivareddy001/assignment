@@ -1,0 +1,39 @@
+1.Write a query to find the countries with the highest temperatures in the dataset?
+-> SELECT Country
+   FROM country_pollution
+   ORDER BY Temperature DESC
+   LIMIT 1;
+2.Write a query to identify the countries with the lowest CO2 emissions in the dataset.
+-> SELECT Country
+   FROM country_pollution
+   ORDER BY CO2 Emissions ASC
+   LIMIT 1;
+3.Write a query to find all temperature records above a specific value, for example, 20 degrees Celsius.
+-> SELECT *
+   FROM country_pollution
+   WHERE Temperature > 20;
+4.Write a query to list all countries with CO2 emissions data available for the year 2020.
+-> SELECT DISTINCT Country
+   FROM country_pollution
+   WHERE Date = 2020;
+5.Write a query to count the total number of temperature records in the dataset.
+-> SELECT COUNT(*)
+   FROM country_pollution;
+6.Write a query to identify any countries with missing temperature data for a specific year, for example, 2015.
+-> SELECT Country
+   FROM country_pollution
+   WHERE Date = 2015
+   AND Temperature IS NULL;
+7.Write a query to find the average temperature for each year in the dataset.
+-> SELECT Date,
+   AVG(Temperature) AS average_temperature
+   FROM country_pollution
+   GROUP BY Date
+   ORDER BY Date;
+8.Write a query to calculate the total CO2 emissions for all countries in the dataset.
+-> SELECT SUM(CO2_Emissions) AS total_emissions
+   FROM country_pollution;
+9.Write a query to sort the temperature data in descending order b the temperature values.
+-> SELECT *
+   FROM country_pollution
+   ORDER BY Temperature DESC;
